@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Servicio de soldadores en Querétaro">
+    <link rel="stylesheet" href="style.css">
+    <title>IMI</title>
+    <!-- Agregar estilos para el mapa si es necesario -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Host+Grotesk&family=Poppins:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <header>
+        <div>
+            <a href="index.html"> <img src="Image/a26b7ae4-8cc3-4e0a-bcea-e35d5ee92c08.jpg" alt="Logo IMI" width="200"></a>
+         </div>
+        <nav class="nav-buttons">
+            <div class="h-buttons"><a href="nosotros.html">Sobre nosotros</a></div>
+            <div class="h-buttons" ><a href="servicios.html">Servicios</a></div>
+            <div class="h-buttons" ><a href="contacto.html">Contactanos</a></div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="imageHeader">
+            <h1 class="title">Instalaciones y Maquilas Industriales</h1>
+        </div>
+
+        <!-- Quienes somos-->
+        <h3 id="quienes-somos">¿Quiénes somos?</h3>
+        <div>
+            <h4>IMI</h4>
+            <p>En [Nombre de la Empresa], nos especializamos en la elaboración de estructuras metálicas y herrería en general, con un firme compromiso hacia la excelencia. Nuestra misión es satisfacer las necesidades del sector de la construcción, brindando soluciones de alta calidad que garanticen la durabilidad y funcionalidad de cada proyecto.</p>
+        </div>
+        
+        <!-- Servicios -->
+        <h3>Como podemos ayudarte? (aqui escribir servicios)</h3>
+        <div>
+            <p>Contenido de los servicios.</p>
+        </div>
+
+        <!-- Nuestros clientes -->
+        <h3>Nuestros clientes</h3>
+        <div>
+            <p>Contenido sobre los clientes.</p>
+        </div>
+
+        <!-- Contacto y Ubicación -->
+        <h3>Contacto</h3>
+        <div class="contact-container">
+            <div class="box">
+                <h4>Información de Contacto <hr></h4>
+
+                <strong>SOLDAMOS TODO</strong><br>
+                Ejido #2, Col. San Gregorio<br>
+                Querétaro, Querétaro<br>
+                (442) 217 1797<br>
+                (442) 371 4750<br>
+            </div>
+            <div id="map" class="map"></div>
+        </div>
+    </main>
+
+    <footer class="footer-container">
+        
+        <div class="footer-image">
+            <a href="https://www.facebook.com/instalacionesymaquilas/"><img src="facebook.png"></a></div>
+        <div class="footer-text">&copy; 2023 IMI. Todos los derechos reservados.</div>
+    </footer>
+    <!-- Scripts para el mapa -->
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script>
+        // Inicializar el mapa centrado en Querétaro
+        const map = L.map('map').setView([20.6086, -100.3967], 20);
+
+        // Añadir el mapa base desde OpenStreetMap
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 19,
+            attribution: '© OpenStreetMap contributors'
+        }).addTo(map);
+
+        // Añadir un marcador en la ubicación de IMI
+        L.marker([20.6086, -100.3967]).addTo(map)
+            .bindPopup('IMI, Querétaro')
+            .openPopup();
+    </script>
+</body>
+</html>
